@@ -1,0 +1,4 @@
+> peces <- import("DoubsSpe.csv")
+> peces$sitio <- c(1:30)
+> peces_largo <- gather(peces, key="especie", value="valor", -sitio)
+> ggplot(peces_largo, aes(x=sitio, y=especie, fill=valor)) + geom_tile() + scale_fill_gradient(low = "white", high = "blue") + labs(x="Sitio", y = "Especie", title ="Mapa de calor de especies por sitio")
